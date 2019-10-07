@@ -14,3 +14,12 @@ Projet Resto avec DRF et VueJs
 
 >## App Staff
 >pour la gestions du prsonnel ,des clients ,des reservations et des nouvelles souscriptions 
+
+
+# Apps Trouver apres analyse et observations dans le groupe 
+
+* resto
+* contact
+* reservation
+* personnelle
+* configuration
