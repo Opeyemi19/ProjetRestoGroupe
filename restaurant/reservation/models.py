@@ -7,6 +7,9 @@ class Table(models.Model):
     numero=models.PositiveIntegerField()
     nombre_de_place=models.PositiveIntegerField()
     nombre=models.PositiveIntegerField()
+    date_add=models.DateTimeField(auto_now_add=True)
+    date_update=models.DateTimeField(auto_now=True)
+    status=models.BooleanField(default=True)
 
     class Meta:
         """Meta definition for Table."""
@@ -22,8 +25,10 @@ class Table(models.Model):
 class Jour(models.Model):
     """Model definition for Jour."""
 
-    day=models.DateField(auto_now=True)
     jour = models.CharField( max_length=50)
+    date_add=models.DateTimeField(auto_now_add=True)
+    date_update=models.DateTimeField(auto_now=True)
+    status=models.BooleanField(default=True)
 
     class Meta:
         """Meta definition for Jour."""
@@ -38,6 +43,9 @@ class Jour(models.Model):
 class Heure(models.Model):
     """Model definition for Heure."""
     heure=models.CharField(max_length=200)
+    date_add=models.DateTimeField(auto_now_add=True)
+    date_update=models.DateTimeField(auto_now=True)
+    status=models.BooleanField(default=True)
 
     class Meta:
         """Meta definition for Heure."""
@@ -56,10 +64,12 @@ class Reservation(models.Model):
     nom=models.CharField(max_length=50)
     email=models.EmailField()
     phone=models.CharField(max_length=50)
-    date_add=models.DateTimeField(auto_now=True)
     status=models.BooleanField(default=False)
     jour = models.ForeignKey(Jour, on_delete=models.CASCADE)
     heure = models.ForeignKey(Heure, on_delete=models.CASCADE)
+    date_add=models.DateTimeField(auto_now_add=True)
+    date_update=models.DateTimeField(auto_now=True)
+    status=models.BooleanField(default=True)
     
 
     class Meta:
