@@ -9,7 +9,7 @@ class AllFront(models.Model):
     footText = models.TextField()
     newsletterText=models.CharField()
     imageTesti=models.ImageField(upload_to='AllFront/TestiImage')
-    imageReservations = models.ImageField( upload_to='AllFront/ReservationsImage')
+    imageReservations = models.ImageField(upload_to='AllFront/ReservationsImage')
     status=models.BooleanField(default=True)
 
     class Meta:
