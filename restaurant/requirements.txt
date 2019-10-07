@@ -1,0 +1,11 @@
+Django
+djangorestframework
+markdown    
+django-filter
+django-admin-generator
+django-admin-interface
+django-seed
+Pillow
+django-tinymce4-lite
+django-filebrowser-no-grappelli
+pyenchant
