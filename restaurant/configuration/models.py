@@ -7,7 +7,7 @@ class AllFront(models.Model):
     headerText = models.CharField( max_length=255)
     movieInto=models.URLField()
     footText = models.TextField()
-    newsletterText=models.CharField()
+    newsletterText=models.CharField(max_length=200)
     imageTesti=models.ImageField(upload_to='AllFront/TestiImage')
     imageReservations = models.ImageField(upload_to='AllFront/ReservationsImage')
     status=models.BooleanField(default=True)
