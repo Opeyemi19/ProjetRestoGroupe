@@ -44,6 +44,11 @@ INSTALLED_APPS = [
     'django_seed',
     'django_admin_generator',
     'rest_framework',
+    'resto.apps.RestoConfig',
+    'contact.apps.ContactConfig',
+    'personnlle.apps.PersonnlleConfig',
+    'configuration.apps.ConfigurationConfig',
+    'reservation.apps.ReservationConfig',
 ]
 
 MIDDLEWARE = [
