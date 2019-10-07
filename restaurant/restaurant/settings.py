@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'resto.apps.RestoConfig',
     'contact.apps.ContactConfig',
-    'personnlle.apps.PersonnlleConfig',
+    'personnelle.apps.PersonnelleConfig',
     'configuration.apps.ConfigurationConfig',
     'reservation.apps.ReservationConfig',
 ]

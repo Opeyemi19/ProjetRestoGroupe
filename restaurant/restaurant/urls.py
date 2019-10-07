@@ -24,6 +24,10 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
     path('admin/', admin.site.urls),
+    path('', include('resto.urls')),
+    path('', include('personnelle.urls')),
+    path('', include('contact.urls')),
+     path('', include('reservation.urls')),
 ]
 
 
