@@ -9,7 +9,7 @@ class Categorie(models.Model):
     status = models.BooleanField(default=True)
     
 
-    class Meta:
+    class Meta:                   
         """Meta definition for Categorie."""
 
         verbose_name = 'Categorie'
