@@ -15,6 +15,8 @@ class MenuSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
 
     # categelement = CategorieSerializer(read_only=True)
 
+    categorie = serializers.SlugRelatedField(many=False, read_only=True, slug_field='nom')
+
     class Meta:
         model = Menu
         fields = [
@@ -23,11 +25,14 @@ class MenuSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
             'image',
             'description',
             'menu_speciale',
+            'categorie'
         ]
+        
 
 
 class CategorieSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
-    Catégorie_menu = MenuSerializer(many=True, read_only=True, required=False)
+    Catégorie_menu = MenuSerializer(many=True, read_only=True, required=False,)
+
     class Meta:
         model = Categorie
         fields = '__all__'

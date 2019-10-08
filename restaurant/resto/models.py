@@ -21,7 +21,7 @@ class Categorie(models.Model):
 
 class Menu(models.Model):
     """Model definition for Menu."""
-
+    
     nom = models.CharField(max_length=50)
     categorie = models.ForeignKey(Categorie, related_name="Catégorie_menu", on_delete=models.CASCADE)
     image = models.ImageField( upload_to='Image_resto',)
@@ -44,7 +44,7 @@ class Specialite(models.Model):
     id_menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='menu_speciale')
     description = models.TextField()
     image = models.ImageField(upload_to="Image_resto",)
-    
+
 
     class Meta:
         """Meta definition for Specialite."""
