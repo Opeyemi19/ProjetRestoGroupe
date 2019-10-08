@@ -10,10 +10,7 @@ from . import models
 class MessageAdmin(admin.ModelAdmin):
 
     list_display = (
-<<<<<<< HEAD
-=======
         'id',
->>>>>>> a404c4bcfc81a1442b85037e63c5076e153d29e2
         'nom',
         'sujet',
         'email',
@@ -26,9 +23,6 @@ class MessageAdmin(admin.ModelAdmin):
         'status',
         'date_add',
         'date_upd',
-<<<<<<< HEAD
-
-=======
         'id',
         'nom',
         'sujet',
@@ -37,29 +31,21 @@ class MessageAdmin(admin.ModelAdmin):
         'status',
         'date_add',
         'date_upd',
->>>>>>> a404c4bcfc81a1442b85037e63c5076e153d29e2
     )
 
 
 class SouscriptionAdmin(admin.ModelAdmin):
 
-<<<<<<< HEAD
-    list_display = ('email', 'status', 'date_add', 'date_upd')
-=======
     list_display = ('id', 'email', 'status', 'date_add', 'date_upd')
->>>>>>> a404c4bcfc81a1442b85037e63c5076e153d29e2
     list_filter = (
         'status',
         'date_add',
         'date_upd',
-<<<<<<< HEAD
-=======
         'id',
         'email',
         'status',
         'date_add',
         'date_upd',
->>>>>>> a404c4bcfc81a1442b85037e63c5076e153d29e2
     )
 
 
@@ -68,8 +54,4 @@ def _register(model, admin_class):
 
 
 _register(models.Message, MessageAdmin)
-<<<<<<< HEAD
 _register(models.Souscription, SouscriptionAdmin)
-=======
-_register(models.Souscription, SouscriptionAdmin)
->>>>>>> a404c4bcfc81a1442b85037e63c5076e153d29e2
