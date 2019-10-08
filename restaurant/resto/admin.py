@@ -20,18 +20,13 @@ class CategorieAdmin(admin.ModelAdmin):
         'date_add',
         'date_update',
         'status',
-        'id',
-        'nom',
-        'description',
-        'date_add',
-        'date_update',
-        'status',
+
     )
 
 
 class MenuAdmin(admin.ModelAdmin):
 
-    list_display = ('nom', 'categorie', 'image', 'description', 'prix')
+    list_display = ('nom', 'categorie', 'image', 'description', 'date_add', 'prix')
     list_filter = (
         'categorie',
         'prix',
@@ -40,8 +35,8 @@ class MenuAdmin(admin.ModelAdmin):
 
 class SpecialiteAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'id_menu', 'description', 'image')
-    list_filter = ('id_menu', 'id', 'id_menu', 'description', 'image')
+    list_display = ('id', 'id_menu', 'description', 'date_add', 'image')
+    list_filter = ('id_menu', )
 
 
 def _register(model, admin_class):
