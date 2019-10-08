@@ -69,7 +69,7 @@ class Reservation(models.Model):
     heure = models.ForeignKey(Heure, on_delete=models.CASCADE, related_name="heure_reserver")
     date_add=models.DateTimeField(auto_now_add=True)
     date_update=models.DateTimeField(auto_now=True)
-    status=models.BooleanField(default=True)
+    status=models.BooleanField(default=False)
     
 
     class Meta:
