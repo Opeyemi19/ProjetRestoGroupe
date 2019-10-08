@@ -1,11 +1,14 @@
 from django.db import models
+
+
+
 class Message(models.Model):
     """Model definition for Message."""
     nom = models.CharField(max_length=250)
     sujet = models.CharField(max_length=250)
     email = models.EmailField()
     message = models.TextField()
-    status = models.BooleanField(default=True)
+    status = models.BooleanField(default=False)
     date_add = models.DateTimeField(auto_now_add=True)
     date_upd = models.DateTimeField(auto_now=True)
 
@@ -21,7 +24,7 @@ class Message(models.Model):
         
 class Souscription(models.Model):
     email = models.EmailField()
-    status = models.BooleanField(default=True)
+    status = models.BooleanField(default=False)
     date_add = models.DateTimeField(auto_now_add=True)
     date_upd = models.DateTimeField(auto_now=True)
     def __str__(self):

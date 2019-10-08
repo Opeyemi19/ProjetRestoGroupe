@@ -8,3 +8,4 @@ django-seed
 Pillow
 django-tinymce4-lite
 django-filebrowser-no-grappelli
+drf-dynamic-fields

@@ -24,7 +24,7 @@ class Menu(models.Model):
 
     nom = models.CharField(max_length=50)
     categorie = models.ForeignKey(Categorie, related_name="Catégorie_menu", on_delete=models.CASCADE)
-    image = models.ImageField( upload_to='menu', height_field=None, width_field=None, max_length=None)
+    image = models.ImageField( upload_to='Image_resto',)
     description = models.TextField()
     prix = models.FloatField()
 
@@ -41,9 +41,10 @@ class Menu(models.Model):
 class Specialite(models.Model):
     """Model definition for Specialite."""
 
-    id_menu = models.ForeignKey(Menu, related_name='menu_speciale' , on_delete=models.CASCADE)
+    id_menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='menu_speciale')
     description = models.TextField()
-
+    image = models.ImageField(upload_to="Image_resto",)
+    
 
     class Meta:
         """Meta definition for Specialite."""
