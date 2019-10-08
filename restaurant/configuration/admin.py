@@ -10,7 +10,6 @@ from . import models
 class AllFrontAdmin(admin.ModelAdmin):
 
     list_display = (
-        'id',
         'logo',
         'headerText',
         'movieInto',
@@ -23,46 +22,33 @@ class AllFrontAdmin(admin.ModelAdmin):
     list_filter = (
         'status',
         'id',
-        'logo',
-        'headerText',
-        'movieInto',
-        'footText',
-        'newsletterText',
-        'imageTesti',
-        'imageReservations',
-        'status',
     )
 
 
 class StepIndexAdmin(admin.ModelAdmin):
+    list_display = ('icon', 'text', 'status')
+    list_filter = ('status',)
 
-    list_display = ('id', 'icon', 'text', 'status')
-    list_filter = ('status', 'id', 'icon', 'text', 'status')
 
 
 class InfoAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'fbLink', 'twLink', 'instaLink', 'phone')
-    list_filter = ('id', 'fbLink', 'twLink', 'instaLink', 'phone')
+    list_display = ('fbLink', 'twLink', 'instaLink', 'phone')
+    
 
 
 class WorkingHoursAdmin(admin.ModelAdmin):
-
-    list_display = ('id', 'day', 'openHours', 'closeHours', 'status')
+    list_display = ('day', 'openHours', 'closeHours', 'status')
     list_filter = (
         'status',
-        'id',
         'day',
-        'openHours',
-        'closeHours',
-        'status',
     )
-
 
 class AboutAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'headerText', 'description', 'image')
-    list_filter = ('id', 'headerText', 'description', 'image')
+    list_display = ('headerText', 'description', 'image')
+    list_filter = ('headerText',)
+
 
 
 def _register(model, admin_class):

@@ -12,8 +12,13 @@ router.register('teamapi', PersonelleViewSet, base_name='teamapi')
 
 
 urlpatterns = [
+<<<<<<< HEAD
+    path('team', views.team, name="team"),
+]
+=======
     path('team/', views.team, name="team"),
 ]
 
 
 urlpatterns += router.urls
+>>>>>>> a404c4bcfc81a1442b85037e63c5076e153d29e2
