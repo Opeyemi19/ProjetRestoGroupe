@@ -18,9 +18,9 @@ class AllFront(models.Model):
         verbose_name = 'AllFront'
         verbose_name_plural = 'AllFronts'
 
-    def __str__(self):
-        """Unicode representation of AllFront."""
-        return AllFront
+    # def __str__(self):
+    #     """Unicode representation of AllFront."""
+    #     return AllFront
 
 class StepIndex(models.Model):
     """Model definition for StepIndex."""
@@ -35,9 +35,9 @@ class StepIndex(models.Model):
         verbose_name = 'StepIndex'
         verbose_name_plural = 'StepIndexs'
 
-    def __str__(self):
-        """Unicode representation of StepIndex."""
-        return StepIndex
+    # def __str__(self):
+    #     """Unicode representation of StepIndex."""
+    #     return StepIndex
 
 
 class Info(models.Model):
@@ -54,9 +54,9 @@ class Info(models.Model):
         verbose_name = 'Info'
         verbose_name_plural = 'Infos'
 
-    def __str__(self):
-        """Unicode representation of Info."""
-        return Info
+    # def __str__(self):
+    #     """Unicode representation of Info."""
+    #     return Info
 
 
 class WorkingHours(models.Model):
@@ -73,9 +73,9 @@ class WorkingHours(models.Model):
         verbose_name = 'WorkingHours'
         verbose_name_plural = 'WorkingHourss'
 
-    def __str__(self):
-        """Unicode representation of WorkingHours."""
-        WorkingHours
+    # def __str__(self):
+    #     """Unicode representation of WorkingHours."""
+    #     WorkingHours
 
 class About(models.Model):
     """Model definition for About."""
@@ -90,9 +90,6 @@ class About(models.Model):
         verbose_name = 'About'
         verbose_name_plural = 'Abouts'
 
-    def __str__(self):
-        """Unicode representation of About."""
-        pass
 
 
 
