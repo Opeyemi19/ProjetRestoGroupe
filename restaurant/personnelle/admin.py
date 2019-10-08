@@ -27,6 +27,7 @@ class PersonelleAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'nom',
+        'image',
         'poste',
         'twitter',
         'facebook',

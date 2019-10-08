@@ -15,6 +15,7 @@ class Poste(models.Model):
 class Personelle(models.Model):
     nom = models.CharField(max_length=50)
     poste = models.ForeignKey(Poste, on_delete=models.CASCADE, related_name="poste_personnelle")
+    image=models.ImageField(upload_to='Pesonelle/')
     twitter = models.URLField(max_length=200)
     facebook = models.URLField(max_length=200)
     google = models.URLField(max_length=200)

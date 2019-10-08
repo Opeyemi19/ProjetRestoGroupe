@@ -31,14 +31,9 @@ class CategorieAdmin(admin.ModelAdmin):
 
 class MenuAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'nom', 'categorie', 'image', 'description', 'prix')
+    list_display = ('nom', 'categorie', 'image', 'description', 'prix')
     list_filter = (
         'categorie',
-        'id',
-        'nom',
-        'categorie',
-        'image',
-        'description',
         'prix',
     )
 

@@ -15,4 +15,4 @@ class PosteSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
 
     class Meta:
         model = Poste
-        fields = '__all__'
+        fields = '__all__'  
