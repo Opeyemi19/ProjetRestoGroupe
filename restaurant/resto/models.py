@@ -44,7 +44,7 @@ class Specialite(models.Model):
     id_menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='menu_speciale')
     description = models.TextField()
     image = models.ImageField(upload_to="Image_resto",)
-
+    
 
     class Meta:
         """Meta definition for Specialite."""

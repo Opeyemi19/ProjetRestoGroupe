@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 class AllFront(models.Model):
     """Model definition for AllFront."""
 
@@ -46,7 +48,7 @@ class Info(models.Model):
     fbLink=models.URLField()
     twLink=models.URLField()
     instaLink=models.URLField()
-    phone=models.CharField(max_length=255)
+    phone=models.CharField(max_length=255) # Le phone on va le placer ou sur notre Templete
 
     class Meta:
         """Meta definition for Info."""

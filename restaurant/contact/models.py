@@ -1,4 +1,7 @@
 from django.db import models
+
+
+
 class Message(models.Model):
     """Model definition for Message."""
     nom = models.CharField(max_length=250)
