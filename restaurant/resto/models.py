@@ -27,7 +27,7 @@ class Menu(models.Model):
     image = models.ImageField( upload_to='Image_resto',)
     description = models.TextField()
     prix = models.FloatField()
-    date_add = models.DateTimeField(auto_now_add=True)
+    date_add = models.DateTimeField(auto_now_add=True, null=True)
     date_update = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=True)
 
