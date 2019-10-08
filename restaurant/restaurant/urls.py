@@ -21,13 +21,14 @@ from filebrowser.sites import site
 
 
 urlpatterns = [
+    path('', include('resto.urls')),
+    path('personnel/', include('personnelle.urls')),
+    path('contact/', include('contact.urls')),
+    path('reservet/', include('reservation.urls')),
+    path('config/', include('configuration.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
     path('admin/', admin.site.urls),
-    path('', include('resto.urls')),
-    path('', include('personnelle.urls')),
-    path('', include('contact.urls')),
-     path('', include('reservation.urls')),
 ]
 
 
