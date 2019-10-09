@@ -50,6 +50,7 @@ var app = new Vue({
         menus : [
 
         ],
+        counter:0
     },
     delimiters: ["${", "}"],
     mounted(){
@@ -68,12 +69,19 @@ var app = new Vue({
                     console.log(response.data)
                     this.specialdishinfos=response.data;
 
+
                 })
                 .catch((err) => {
                     console.log(err);
                 })
         },
 
+        methods: {
+            increment() { 
+              this.counter++;
+            }
+        },
+        
         getmenus: function(){
             axios.get('http://127.0.0.1:8000/menuapi/')
                 .then(response => {
