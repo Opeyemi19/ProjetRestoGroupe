@@ -8,7 +8,6 @@ class SpecialiteSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
         model = Specialite
         fields = '__all__'
 
-
 class MenuSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
 
     menu_speciale = SpecialiteSerializer(many=True, read_only=True, required=False)
@@ -28,6 +27,16 @@ class MenuSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
             'categorie'
         ]
         
+
+class MenuJourSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
+
+    menu_jour = MenuSerializer(many=True, read_only=True, required=False)
+
+    class Meta:
+        model = MenuJour
+        fields = '__all__'
+
+
 
 
 class CategorieSerializer(DynamicFieldsMixin, serializers.ModelSerializer):

@@ -61,4 +61,20 @@ class Specialite(models.Model):
         return self.id_menu.nom
 
 
+class MenuJour(models.Model):
+    id_menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='menu_jour')
+    jour = models.CharField(max_length=50)
+    date_add = models.DateTimeField(auto_now_add=True, null=True)
+    date_update = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=True)
+
+    class Meta:
+        """Meta definition for MenuJour"""
+
+        verbose_name = 'Menu du Jour'
+        
+
+    def __str__(self):
+        """Unicode representation of Specialite."""
+        return self.jour
 
