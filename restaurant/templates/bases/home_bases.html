@@ -107,9 +107,15 @@
             </a>
             <ul class="navbar-nav d-flex justify-content-between">
                 <div class="d-flex flex-lg-row flex-column">
-                    <li class="nav-item active">
-                        <a class="nav-link" href={% url 'menu' %}>Menu</a>
-                    </li>
+						<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  menu
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownmenu">
+								  <a class="dropdown-item" href={% url 'jours' %}>Du jours </a>
+								  <a class="dropdown-item" href={% url 'menu' %}>Tous</a>
+								</div>
+						</li>
                     <li class="nav-item">
                         <a class="nav-link" href={% url 'team' %}>Team</a>
                     </li>
@@ -175,13 +181,17 @@
          	<div class="col-lg-4">
          		<div class="footer-widget pl-lg-5 pl-0">
          			<h4>Newsletter</h4>
-	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-	         		<form id="newsletter">
-						<div class="form-group">
-							<input type="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email">
-						</div>
-						<button type="submit" class="btn btn-primary w-100">Submit</button>
-					</form>
+					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					 
+					<div id="appfatayonewletter">
+						<form id="newsletter" v-on:submit="onSubmit" >{% csrf_token %}
+							<div class="form-group">
+								<input type="email" name="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email" v-model.trim="form.email">
+							</div>
+							<button type="submit" class="btn btn-primary w-100">Submit</button>
+						</form>
+					</div>
+
          		</div>
          		
          	</div>
@@ -209,11 +219,14 @@
 	<!-- Main JS -->
 	<script src="/static/js/app.min.js "></script>
 
+	<!-- SweetAlert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<!-- VueJs et Axios -->
 	<script src="/static/vuejs/vue.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> --> <!-- C'est le cdn de VueJs mais j'ai opte pour vueJs en local -->
 	
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/static/vuejs/axios-min.js"></script>
 	<!-- Fin VueJs et Axios -->
 
 			<!-- Index_cedric.js -->

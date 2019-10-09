@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.utils.safestring import mark_safe
 # Register your models here.# vim: set fileencoding=utf-8 :
 from django.contrib import admin
 
@@ -26,12 +26,18 @@ class CategorieAdmin(admin.ModelAdmin):
 
 class MenuAdmin(admin.ModelAdmin):
 
-    list_display = ('nom', 'categorie', 'image', 'description', 'date_add', 'prix')
+    list_display = ('nom', 'categorie', 'afficheImage', 'description', 'date_add', 'prix')
     list_filter = (
         'categorie',
         'prix',
     )
 
+    def __str__(self):
+        """Unicode representation of Menu."""
+        return self.nom
+    
+    def afficheImage(self, obj):
+        return mark_safe('<img src = " {url} " width = " 100px " heigth = " 50px " />'.format(url=obj.image.url))
 
 class SpecialiteAdmin(admin.ModelAdmin):
 
