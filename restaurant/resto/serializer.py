@@ -19,6 +19,7 @@ class MenuSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     class Meta:
         model = Menu
         fields = [
+            'id',
             'nom',
             'prix',
             'image',

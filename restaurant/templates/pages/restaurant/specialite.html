@@ -7,14 +7,14 @@
                 <span class="subheading">
                     Specialties
                 </span>
-                <h2>
+                <h2> 
                     Special Dishes
                 </h2>
             </div>
-            <div class="row mt-5" id="special-dish" v-for="specialdishinfo in specialdishinfos" >
+            <div class="row mt-5" id="special-dish" v-for="(specialdishinfo, index) in specialdishinfos" >
                 <div v-if="specialdishinfo.id%2==1" class="row mt-5">
                     <div class="col-lg-5 col-md-6 align-self-center py-5">
-                        <h2 class="special-number"> ${ specialdishinfo.id }. </h2>
+                        <h2 class="special-number"> ${ index+1 }. </h2>
                         <div class="dishes-text">
                             <div v-for="menu in menus">
                                 <div v-if="specialdishinfo.id_menu==menu.id">
@@ -35,7 +35,7 @@
                         <img :src="specialdishinfo.image" alt="" class="img-fluid shadow w-100">
                     </div>
                     <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
-                        <h2 class="special-number"> ${ specialdishinfo.id }. </h2>
+                        <h2 class="special-number">  ${ index+1 }. </h2>
                         <div class="dishes-text">
                             <div v-for="menu in menus">
                                 <div v-if="specialdishinfo.id_menu==menu.id">
