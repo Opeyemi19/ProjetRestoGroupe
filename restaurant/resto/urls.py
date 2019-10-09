@@ -13,7 +13,6 @@ router.register('specialapi', SpecialiteViewSet, base_name='specialapi')
 
 
 
-
 urlpatterns = [
     path('', views.home , name="home"),
     path('menu/', views.Menu , name="menu"),
