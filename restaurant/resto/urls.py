@@ -18,6 +18,7 @@ urlpatterns = [
     path('menu/', views.Menu , name="menu"),
     path('about/', views.About, name="about"),
     path('special/', views.specialite, name="special"),
+    path('jours/', views.jours, name="jours"),
 ]
 
 

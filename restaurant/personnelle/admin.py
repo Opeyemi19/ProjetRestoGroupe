@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.utils.safestring import mark_safe
 # Register your models here.
 # vim: set fileencoding=utf-8 :
 from django.contrib import admin
@@ -14,25 +14,14 @@ class PosteAdmin(admin.ModelAdmin):
         'date_add',
         'date_upd',
         'status',
-        'id',
-        'nom',
-        'date_add',
-        'date_upd',
-        'status',
     )
 
 
 class PersonelleAdmin(admin.ModelAdmin):
 
     list_display = (
-        'id',
         'nom',
-        'image',
-        'poste',
-        'twitter',
-        'facebook',
-        'google',
-        'instagram',
+        'afficheImage',
         'date_add',
         'date_upd',
         'status',
@@ -42,18 +31,9 @@ class PersonelleAdmin(admin.ModelAdmin):
         'date_add',
         'date_upd',
         'status',
-        'id',
-        'nom',
-        'poste',
-        'twitter',
-        'facebook',
-        'google',
-        'instagram',
-        'date_add',
-        'date_upd',
-        'status',
     )
-
+    def afficheImage(self, obj):
+        return mark_safe('<img src = " {url} " width = " 100px " heigth = " 50px " />'.format(url=obj.image.url))
 
 def _register(model, admin_class):
     admin.site.register(model, admin_class)

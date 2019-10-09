@@ -9,8 +9,11 @@ from .  import views
 
 router = DefaultRouter()
 router.register('teamapi', PersonelleViewSet, base_name='teamapi')
-
+router.register('posteapi', PosteViewSet, base_name='posteapi')
 
 urlpatterns = [
     path('team', views.team, name="team"),
 ]
+
+
+urlpatterns += router.urls
