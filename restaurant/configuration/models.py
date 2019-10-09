@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class BannerResto(models.Model):
+
+    image_banner=models.ImageField(upload_to='Banner/Image_Banner')
+    status = models.BooleanField(default=False)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_upd = models.DateTimeField(auto_now=True)
+
+
 
 class AllFront(models.Model):
     """Model definition for AllFront."""

@@ -9,6 +9,13 @@ class DynamicSearchFilter(filters.SearchFilter):
         return request.GET.getlist('search_fields', [])
 
 
+
+
+class BannerRestoViewSet(viewsets.ModelViewSet):
+    filter_backends = (DynamicSearchFilter,)
+    queryset = BannerResto.objects.all()
+    serializer_class = BannerRestoSerializer
+
 class AllFrontViewSet(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
     queryset = AllFront.objects.all()
