@@ -71,7 +71,7 @@ var app = new Vue({
                 this.newsLaterText=response.data[0].newsletterText
                 this.movieUrl=this.movieUrl.replace("watch", "/embed/");
                 console.log(response.data[0].logo)
-                // console.log(this.logoUrl+'\n'+ this.headerText +'\n'+this.movieUrl+'\n'+this.imageTesti+'\n'+this.imageResrvation+'\n'+this.foorTerText+'\n'+this.newsLaterText)
+                console.log(this.logoUrl+'\n'+ this.headerText +'\n'+this.movieUrl+'\n'+this.imageTesti+'\n'+this.imageResrvation+'\n'+this.foorTerText+'\n'+this.newsLaterText)
             })
             .catch((err) => {   
                 console.log(err);
@@ -87,6 +87,7 @@ var app = new Vue({
                 this.myImg3=this.sladerImage[0].image
                 this.myImg1=this.sladerImage[1].image
                 this.myImg2=this.sladerImage[2].image
+                Console.log('Slide image'+this.sladerImage)
             })
             .catch((err)=>{
                 console.log(err)
