@@ -8,6 +8,7 @@ from . import views
 router = DefaultRouter()
 router.register('categorieapi', CategorieViewSet, base_name='categorieapi')
 router.register('menuapi', MenuViewSet, base_name='menuapi')
+router.register('menujourapi', MenuJourViewSet, base_name='menujourapi')
 router.register('specialapi', SpecialiteViewSet, base_name='specialapi')
 
 
