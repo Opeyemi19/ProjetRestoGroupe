@@ -28,7 +28,6 @@ var app = new Vue({
                 .then(response => {
                     console.log(response.data)
                     this.infos=response.data;
-
                 })
                 .catch((err) => {
                     console.log(err);
