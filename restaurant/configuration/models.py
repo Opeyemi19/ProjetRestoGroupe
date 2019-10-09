@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class BannerResto(models.Model):
+
+    image_banner=models.ImageField(upload_to='Banner/Image_Banner')
+    status = models.BooleanField(default=False)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_upd = models.DateTimeField(auto_now=True)
+
+
 
 class AllFront(models.Model):
     """Model definition for AllFront."""
@@ -77,7 +85,20 @@ class About(models.Model):
         verbose_name_plural = 'Abouts'
 
 
+class Banner(models.Model):
+    """Model definition for banner."""
 
+    imgurl = models.ImageField( upload_to='banner/img')
+
+    class Meta:
+        """Meta definition for banner."""
+
+        verbose_name = 'banner'
+        verbose_name_plural = 'banners'
+
+    def __str__(self):
+        """Unicode representation of banner."""
+        return self.imgurl
 
 
 

@@ -17,14 +17,26 @@ class TableViewSet(viewsets.ModelViewSet):
 
 class JourViewSet(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
-    queryset = Jour.objects.all()
+    queryset = Jour.objects.filter(status=True)
     serializer_class = JourSerializer
 
 
 class HeureViewSet(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
-    queryset = Heure.objects.all()
+    queryset = Heure.objects.filter(status=True)
     serializer_class = HeureSerializer
+
+
+class PersonViewSet(viewsets.ModelViewSet):
+    filter_backends = (DynamicSearchFilter,)
+    queryset = Person.objects.filter(status=True)
+    serializer_class = PersonSerializer
+
+
+class TableMessageViewSet(viewsets.ModelViewSet):
+    filter_backends = (DynamicSearchFilter,)
+    queryset = TableMessage.objects.all()
+    serializer_class = TableMessageSerializer
 
 
 class ReservationViewSet(viewsets.ModelViewSet):

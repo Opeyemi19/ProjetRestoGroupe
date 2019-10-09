@@ -8,6 +8,10 @@ from .  import views
 
 
 router = DefaultRouter()
+router.register('jourapi', JourViewSet, base_name='jourapi')
+router.register('heureapi', HeureViewSet, base_name='heureapi')
+router.register('personapi', PersonViewSet, base_name='personapi')
+router.register('messageresvationapi', TableMessageViewSet, base_name='messageresvationapi')
 router.register('reservationapi', ReservationViewSet, base_name='reservationapi')
 
 
