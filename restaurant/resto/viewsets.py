@@ -22,6 +22,13 @@ class MenuViewSet(viewsets.ModelViewSet):
     serializer_class = MenuSerializer
 
 
+class MenuJourViewSet(viewsets.ModelViewSet):
+    filter_backends = (DynamicSearchFilter,)
+    queryset = MenuJour.objects.all()
+    serializer_class = MenuJourSerializer
+
+
+
 class SpecialiteViewSet(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
     queryset = Specialite.objects.all()

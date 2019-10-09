@@ -175,13 +175,17 @@
          	<div class="col-lg-4">
          		<div class="footer-widget pl-lg-5 pl-0">
          			<h4>Newsletter</h4>
-	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-	         		<form id="newsletter">
-						<div class="form-group">
-							<input type="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email">
-						</div>
-						<button type="submit" class="btn btn-primary w-100">Submit</button>
-					</form>
+					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					 
+					<div id="appfatayonewletter">
+						<form id="newsletter" v-on:submit="onSubmit" >{% csrf_token %}
+							<div class="form-group">
+								<input type="email" name="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email" v-model.trim="form.email">
+							</div>
+							<button type="submit" class="btn btn-primary w-100">Submit</button>
+						</form>
+					</div>
+
          		</div>
          		
          	</div>
@@ -208,6 +212,9 @@
 
 	<!-- Main JS -->
 	<script src="/static/js/app.min.js "></script>
+
+	<!-- SweetAlert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<!-- VueJs et Axios -->
 	<script src="/static/vuejs/vue.js"></script>

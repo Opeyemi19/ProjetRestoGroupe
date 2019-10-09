@@ -5,34 +5,48 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-content bg-white p-5 shadow">
-                    <div class="heading-section text-center">
-                        <span class="subheading">
-                            Nous contacter
-                        </span>
-                        <h2>
-                           Laisser Nous un Message
-                        </h2>
-                    </div>
-                    <form method="post" name="contact-us" action="">
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="sujet" name="sujet" placeholder="Sujet">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message ..."></textarea>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <button class="btn btn-primary btn-shadow btn-lg" type="submit" name="submit">Envoyer</button>
-                            </div>
+
+                        <!-- <div id="appfatayo">
+
+                                ${ message }
+    
+                                <button v-on:click="reverseMessage">Reverse Message</button>
+    
+                                <div class="btn btn-primary" v-on:click="hello">
+                                                    Bouton
+                                </div>
+                        </div> -->
+
+                    <div id="appfatayo">
+                        <div class="heading-section text-center">
+                            <span class="subheading">
+                                Nous contacter
+                            </span>
+                            <h2>
+                            Laisser Nous un Message
+                            </h2>
                         </div>
-                    </form>
-                </div>
+                        <form v-on:submit="onSubmit" name="contact-us" action=""> {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" id="name" name="nom" placeholder="Name" v-model.trim="form.nom">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" v-model.trim="form.email">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" id="sujet" name="sujet" placeholder="Sujet" v-model.trim="form.sujet">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message ..." v-model.trim="form.message"></textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button class="btn btn-primary btn-shadow btn-lg" type="submit">Envoyer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
             </div>
             <div class="col-lg-3">
             </div>
