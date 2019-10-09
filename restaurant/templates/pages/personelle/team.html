@@ -1,5 +1,6 @@
 {% extends "bases/home_bases.html" %}
 {%block content%}
+<div id='team'>
 <section id="gtco-team" class="bg-white section-padding">
     <div class="container">
         <div class="section-content">
@@ -12,102 +13,46 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="team-card mb-5">
-                        <img class="img-fluid" src="/static/img/chef-1.jpg" alt="">
-                        <div class="team-desc">
-                            <h4 class="mb-0">Aaron Patel</h4>
-                            <p class="mb-1">CEO</p>
-                            <ul class="list-inline mb-0 team-social-links">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                    <div class="col-md-4 " v-for='item in teams'>
+                            <div class="team-card mb-5">
+                                <img class="img-fluid"  v-bind:src="item.image" alt="">
+                                <div class="team-desc">
+                                    <h4 class="mb-0">${item.nom}</h4>
+                                    <p class="mb-1" v-for="pot in postes " v-if="item.poste==pot.id">${pot.nom}</p>
+                                    <ul class="list-inline mb-0 team-social-links">
+                                        <li class="list-inline-item">
+                                            <a v-bind:href="item.facebook" >
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                       
+                                        <li class="list-inline-item">
+                                            <a v-bind:href="item.instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                        <a v-bind:href="item.twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                        <li class="list-inline-item">
+                                            <a v-bind:href="item.google">
+                                                <i class="fab fa-google-plus-g"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-card mb-5">
-                        <img class="img-fluid" src="/static/img/chef-2.jpg" alt="">
-                        <div class="team-desc">
-                            <h4 class="mb-0">Daniel Tebas</h4>
-                            <p class="mb-1">Chef</p>
-                            <ul class="list-inline mb-0 team-social-links">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-card mb-5">
-                        <img class="img-fluid" src="/static/img/chef-3.jpg" alt="">
-                        <div class="team-desc">
-                            <h4 class="mb-0">Jon Snow</h4>
-                            <p class="mb-1">Chef</p>
-                            <ul class="list-inline mb-0 team-social-links">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                        
+                    </perso-item>
+                
+
             </div>
         </div>
     </div>
 </section>
+</div>
 {% endblock content%}
 

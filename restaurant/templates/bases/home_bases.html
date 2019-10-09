@@ -107,9 +107,15 @@
             </a>
             <ul class="navbar-nav d-flex justify-content-between">
                 <div class="d-flex flex-lg-row flex-column">
-                    <li class="nav-item active">
-                        <a class="nav-link" href={% url 'menu' %}>Menu</a>
-                    </li>
+						<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  menu
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownmenu">
+								  <a class="dropdown-item" href={% url 'jours' %}>Du jours </a>
+								  <a class="dropdown-item" href={% url 'menu' %}>Tous</a>
+								</div>
+						</li>
                     <li class="nav-item">
                         <a class="nav-link" href={% url 'team' %}>Team</a>
                     </li>
@@ -220,7 +226,7 @@
 	<script src="/static/vuejs/vue.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> --> <!-- C'est le cdn de VueJs mais j'ai opte pour vueJs en local -->
 	
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/static/vuejs/axios-min.js"></script>
 	<!-- Fin VueJs et Axios -->
 
 			<!-- Index_cedric.js -->

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Categorie(models.Model):
     """Model definition for Categorie."""
     nom=models.CharField(max_length=70)
@@ -37,9 +38,7 @@ class Menu(models.Model):
         verbose_name = 'Menu'
         verbose_name_plural = 'Menus'
 
-    def __str__(self):
-        """Unicode representation of Menu."""
-        return self.nom
+    
     
 class Specialite(models.Model):
     """Model definition for Specialite."""
