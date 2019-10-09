@@ -37,6 +37,10 @@ class Menu(models.Model):
 
         verbose_name = 'Menu'
         verbose_name_plural = 'Menus'
+        
+    def __str__(self):
+        """Unicode representation of Categorie."""
+        return self.nom+' '+str(self.categorie.nom)
 
     
     
