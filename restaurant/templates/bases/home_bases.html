@@ -34,176 +34,179 @@
 
 </head>
 <body data-spy="scroll" data-target="#navbar"> 
+<div id="app">
 	<div id="side-nav" class="sidenav">
-	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+		<a href="javascript:void(0)" id="side-nav-close">&times;</a>
 	
-	<div class="sidenav-content">
-		<p>
-			Kuncen WB1, Wirobrajan 10010, DIY
-		</p>
-		<p>
-			<span class="fs-16 primary-color">(+68) 120034509</span>
-		</p>
-		<p>info@yourdomain.com</p>
-	</div>
-</div>	<div id="side-search" class="sidenav">
-	<a href="javascript:void(0)" id="side-search-close">&times;</a>
-	<div class="sidenav-content">
-		<form action="">
+		<div class="sidenav-content">
+			<p>
+				Kuncen WB1, Wirobrajan 10010, DIY
+			</p>
+			<p>
+				<span class="fs-16 primary-color">(+68) 120034509</span>
+			</p>
+			<p>info@yourdomain.com</p>
+		</div>
+	</div>	<div id="side-search" class="sidenav">
+		<a href="javascript:void(0)" id="side-search-close">&times;</a>
+		<div class="sidenav-content">
+			<form action="">
 
-			<div class="input-group md-form form-sm form-2 pl-0">
-			  <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-			  <div class="input-group-append">
-			    <button class="input-group-text red lighten-3" id="basic-text1">
-			    	<i class="fas fa-search text-grey" aria-hidden="true"></i>
-			    </button>
-			  </div>
-			</div>
+				<div class="input-group md-form form-sm form-2 pl-0">
+				<input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+				<div class="input-group-append">
+					<button class="input-group-text red lighten-3" id="basic-text1">
+						<i class="fas fa-search text-grey" aria-hidden="true"></i>
+					</button>
+				</div>
+				</div>
 
-		</form>
-	</div>
+			</form>
+		</div>
 	
  	
-</div>	<div id="canvas-overlay"></div>
-	<div class="boxed-page">
-		<nav id="navbar-header" class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
-            <img src="/static/img/logo.png" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="lnr lnr-menu"></span>
-        </button>
+	</div>	<div id="canvas-overlay"></div>
+		<div class="boxed-page">
+			<nav id="navbar-header" class="navbar navbar-expand-lg">
+		<div class="container">
+			<a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
+				<img :src="logoUrl" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="lnr lnr-menu"></span>
+			</button>
 
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav d-flex justify-content-between">
-                <li class="nav-item only-desktop">
-                    <a class="nav-link" id="side-nav-open" href="#">
-                        <span class="lnr lnr-menu"></span>
-                    </a>
-                </li>
-                <div class="d-flex flex-lg-row flex-column">
-                    <li class="nav-item active">
-                        <a class="nav-link" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={% url 'about' %}>About</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Special Dishes
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href={% url 'special' %}>Beef Steak Sauce</a>
-                          <a class="dropdown-item" href={% url 'special' %}>Salmon Zucchini</a>
-                        </div>
-                    </li>
-                </div>
-            </ul>
-            
-            <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href="#">
-                <img src="/static/img/logo.png" alt="">
-            </a>
-            <ul class="navbar-nav d-flex justify-content-between">
-                <div class="d-flex flex-lg-row flex-column">
-						<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  menu
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdownmenu">
-								  <a class="dropdown-item" href={% url 'jours' %}>Du jours </a>
-								  <a class="dropdown-item" href={% url 'menu' %}>Tous</a>
-								</div>
-						</li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={% url 'team' %}>Team</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href={% url 'reservation' %}>Reservation</a>
+			<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+				<ul class="navbar-nav d-flex justify-content-between">
+					<li class="nav-item only-desktop">
+						<a class="nav-link" id="side-nav-open" href="#">
+							<span class="lnr lnr-menu"></span>
+						</a>
 					</li>
-					<li class="nav-item dropdown">
-                        <a class="nav-link" href={% url 'contact' %}>Contacter</a>
-                    </li>
-                </div>
-                <li class="nav-item">
-                    <a id="side-search-open" class="nav-link" href="#">
-                        <span class="lnr lnr-magnifier"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>		<!-- Menu Section -->
-{% block content %}
-  
-{% endblock content %}
-<!-- End of menu Section -->
+					<div class="d-flex flex-lg-row flex-column">
+						<li class="nav-item active">
+							<a class="nav-link" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href={% url 'about' %}>About</a>
+						</li>
 
-<footer class="mastfoot pb-5 bg-white section-padding pb-0">
-    <div class="inner container">
-         <div class="row">
-         	<div class="col-lg-4">
-         		<div class="footer-widget pr-lg-5 pr-0">
-         			<img src="/static/img/logo.png" class="img-fluid footer-logo mb-3" alt="">
-	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni, et voluptatum dolorem.</p>
-	         		<nav class="nav nav-mastfoot justify-content-start">
-		                <a class="nav-link" href="#">
-		                	<i class="fab fa-facebook-f"></i>
-		                </a>
-		                <a class="nav-link" href="#">
-		                	<i class="fab fa-twitter"></i>
-		                </a>
-		                <a class="nav-link" href="#">
-		                	<i class="fab fa-instagram"></i>
-		                </a>
-		            </nav>
-         		</div>
-         		
-         	</div>
-         	<div class="col-lg-4">
-         		<div class="footer-widget px-lg-5 px-0">
-         			<h4>Open Hours</h4>
-	         		<ul class="list-unstyled open-hours">
-		                <li class="d-flex justify-content-between"><span>Monday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Tuesday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Wednesday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Thursday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Friday</span><span>9:00 - 02:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Saturday</span><span>9:00 - 02:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Sunday</span><span> Closed</span></li>
-		              </ul>
-         		</div>
-         		
-         	</div>
-
-         	<div class="col-lg-4">
-         		<div class="footer-widget pl-lg-5 pl-0">
-         			<h4>Newsletter</h4>
-					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-					 
-					<div id="appfatayonewletter">
-						<form id="newsletter" v-on:submit="onSubmit" >{% csrf_token %}
-							<div class="form-group">
-								<input type="email" name="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email" v-model.trim="form.email">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Special Dishes
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href={% url 'special' %}>Beef Steak Sauce</a>
+							<a class="dropdown-item" href={% url 'special' %}>Salmon Zucchini</a>
 							</div>
-							<button type="submit" class="btn btn-primary w-100">Submit</button>
-						</form>
+						</li>
 					</div>
-
-         		</div>
-         		
-         	</div>
-         	<div class="col-md-12 d-flex align-items-center">
-         		<p class="mx-auto text-center mb-0">Copyright 2019. All Right Reserved. Design by <a href="https://gettemplates.co" target="_blank">GetTemplates</a></p>
-         	</div>
+				</ul>
             
-        </div>
-    </div>
-</footer>	
-</div>
+				<a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href="#">
+					<img :src="logoUrl" alt="">
+				</a>
+				<ul class="navbar-nav d-flex justify-content-between">
+					<div class="d-flex flex-lg-row flex-column">
+							<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									menu
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownmenu">
+									<a class="dropdown-item" href={% url 'jours' %}>Du jours </a>
+									<a class="dropdown-item" href={% url 'menu' %}>Tous</a>
+									</div>
+							</li>
+						<li class="nav-item">
+							<a class="nav-link" href={% url 'team' %}>Team</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link" href={% url 'reservation' %}>Reservation</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href={% url 'contact' %}>Contacter</a>
+						</li>
+					</div>
+					<li class="nav-item">
+						<a id="side-search-open" class="nav-link" href="#">
+							<span class="lnr lnr-magnifier"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>		<!-- Menu Section -->
+	{% block content %}
+  
+	{% endblock content %}
+	<!-- End of menu Section -->
+
+	<footer class="mastfoot pb-5 bg-white section-padding pb-0">
+		<div class="inner container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="footer-widget pr-lg-5 pr-0">
+						<img :src="logoUrl" class="img-fluid footer-logo mb-3" alt="">
+						<p> ${foorTerText} </p>
+						<nav class="nav nav-mastfoot justify-content-start">
+							<a class="nav-link" :href='info[0]'>
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a class="nav-link" :href='info[0]'>
+								<i class="fab fa-twitter"></i>
+							</a>	
+							<a class="nav-link" :href='info[0]'>
+								<i class="fab fa-instagram"></i>
+							</a>
+						</nav>
+					</div>
+         		
+				</div>
+				<div class="col-lg-4">
+					<div class="footer-widget px-lg-5 px-0">
+						<h4>Open Hours</h4>
+						<ul class="list-unstyled open-hours">
+						
+							<li class="d-flex justify-content-between"><span>${workingH[0].day}</span><span>${workingH[0].openHours} - ${workingH[0].closeHours} </span></li>
+							<li class="d-flex justify-content-between"><span>${workingH[1].day}</span><span>${workingH[1].openHours} - ${workingH[1].closeHours} </span></li>
+							<li class="d-flex justify-content-between"><span>${workingH[2].day}</span><span>${workingH[2].openHours} - ${workingH[2].closeHours} </span></li>
+							<li class="d-flex justify-content-between"><span>${workingH[3].day}</span><span>${workingH[3].openHours} - ${workingH[3].closeHours} </span></li>
+							<li class="d-flex justify-content-between"><span>${workingH[4].day}</span><span>${workingH[4].openHours} - ${workingH[4].closeHours} </span></li>
+							<li class="d-flex justify-content-between"><span>${workingH[5].day}</span><span>${workingH[5].openHours} - ${workingH[5].closeHours}</span></li>
+							<!-- <li class="d-flex justify-content-between"><span>${workingH[6].day}</span><span>${workingH[6].openHours} - ${workingH[6].closeHours}</span></li> -->
+						</ul>
+					</div>
+         		
+				</div>
+
+				<div class="col-lg-4">
+					<div class="footer-widget pl-lg-5 pl-0">
+						<h4>Newsletter</h4>
+						<p>${newsLaterText}</p>
+					 
+						<div id="appfatayonewletter">
+							<form id="newsletter" v-on:submit="onSubmit" >{% csrf_token %}
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email" v-model.trim="form.email">
+								</div>
+								<button type="submit" class="btn btn-primary w-100">Submit</button>
+							</form>
+						</div>
+
+					</div>
+         		
+				</div>
+				<div class="col-md-12 d-flex align-items-center">
+					<p class="mx-auto text-center mb-0">Copyright 2019. All Right Reserved. Design by <a href="https://gettemplates.co" target="_blank">GetTemplates</a></p>
+				</div>
+            
+			</div>
+		</div>
+	</footer>	
+	</div>
 	
+	</div>
 </div>
 	<!-- External JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
