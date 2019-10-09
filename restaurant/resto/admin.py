@@ -23,6 +23,21 @@ class CategorieAdmin(admin.ModelAdmin):
 
     )
 
+class MenuJourAdmin(admin.ModelAdmin):
+    
+    list_display = (
+        'id_menu',
+        'jour',
+        'date_add',
+        'date_update',
+        'status',
+    )
+    list_filter = (
+        'date_add',
+        'date_update',
+        'status',
+
+    )
 
 class MenuAdmin(admin.ModelAdmin):
 
@@ -48,7 +63,7 @@ class SpecialiteAdmin(admin.ModelAdmin):
 def _register(model, admin_class):
     admin.site.register(model, admin_class)
 
-
+_register(models.MenuJour, MenuJourAdmin)
 _register(models.Categorie, CategorieAdmin)
 _register(models.Menu, MenuAdmin)
 _register(models.Specialite, SpecialiteAdmin)
