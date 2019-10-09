@@ -17,8 +17,8 @@ Vue.component('working',{
     `,
     props:['item']
 })
-var app = new Vue({ 
-    el: '#app',
+var princi= new Vue({ 
+    el: '#princ',
     data: {
         exemple:'pentest extemple ',
         message: 'You Pentest this page on ' + new Date().toLocaleString(),
@@ -50,13 +50,6 @@ var app = new Vue({
         this.get_workingHours()
     },
     methods: {
-        reverseMessage: function () {
-            this.message = this.message.split('').reverse().join('')
-        },
-                
-        hello: function () {
-            console.log('Patrick')
-        },
 
         get_allFront:function(){
             axios.get('http://127.0.0.1:8000/config/allfront/')
