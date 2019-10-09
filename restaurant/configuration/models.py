@@ -77,7 +77,20 @@ class About(models.Model):
         verbose_name_plural = 'Abouts'
 
 
+class Banner(models.Model):
+    """Model definition for banner."""
 
+    imgurl = models.ImageField( upload_to='banner/img')
+
+    class Meta:
+        """Meta definition for banner."""
+
+        verbose_name = 'banner'
+        verbose_name_plural = 'banners'
+
+    def __str__(self):
+        """Unicode representation of banner."""
+        return self.imgurl
 
 
 

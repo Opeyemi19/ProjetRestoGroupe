@@ -34,7 +34,6 @@ class StepIndexAdmin(admin.ModelAdmin):
 class InfoAdmin(admin.ModelAdmin):
 
     list_display = ('fbLink', 'twLink', 'instaLink', 'phone')
-    
 
 
 class WorkingHoursAdmin(admin.ModelAdmin):
