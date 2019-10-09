@@ -66,7 +66,6 @@ class WorkingHours(models.Model):
 
 class About(models.Model):
     """Model definition for About."""
-
     headerText=models.CharField(max_length=255)
     description = models.TextField()
     image=models.ImageField(upload_to='About')
