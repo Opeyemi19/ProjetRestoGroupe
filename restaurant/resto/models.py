@@ -28,6 +28,7 @@ class Menu(models.Model):
     image = models.ImageField( upload_to='Image_resto',)
     description = models.TextField()
     prix = models.FloatField()
+    menujour =  models.CharField(max_length=50,null=True)
     date_add = models.DateTimeField(auto_now_add=True, null=True)
     date_update = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=True)
@@ -66,6 +67,7 @@ class Specialite(models.Model):
 
 class MenuJour(models.Model):
     id_menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='menu_jour')
+    categroie = models.ForeignKey(Categorie, on_delete=models.CASCADE,related_name='categorie_menu_jour')
     jour = models.CharField(max_length=50)
     date_add = models.DateTimeField(auto_now_add=True, null=True)
     date_update = models.DateTimeField(auto_now=True)

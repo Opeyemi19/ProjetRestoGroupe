@@ -25,7 +25,8 @@ class MenuSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
             'image',
             'description',
             'menu_speciale',
-            'categorie'
+            'categorie',
+            'menujour'
         ]
         
 
@@ -42,7 +43,7 @@ class MenuJourSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
 
 class CategorieSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     Catégorie_menu = MenuSerializer(many=True, read_only=True, required=False,)
-
+    categorie_menu_jour = MenuJourSerializer(many=True, read_only=True, required=False)
     class Meta:
         model = Categorie
         fields = '__all__'

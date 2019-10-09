@@ -41,10 +41,9 @@ class MenuJourAdmin(admin.ModelAdmin):
 
 class MenuAdmin(admin.ModelAdmin):
 
-    list_display = ('nom', 'categorie', 'afficheImage', 'description', 'date_add', 'prix')
+    list_display = ('nom', 'categorie','menujour', 'afficheImage', 'description', 'date_add', 'prix')
     list_filter = (
         'categorie',
-        'prix',
     )
 
     def __str__(self):

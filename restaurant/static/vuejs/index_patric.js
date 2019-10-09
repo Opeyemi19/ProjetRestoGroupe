@@ -17,8 +17,8 @@ Vue.component('working',{
     `,
     props:['item']
 })
-var princi= new Vue({ 
-    el: '#princ',
+var principal= new Vue({ 
+    el: '#pri',
     data: {
         exemple:'pentest extemple ',
         message: 'You Pentest this page on ' + new Date().toLocaleString(),
