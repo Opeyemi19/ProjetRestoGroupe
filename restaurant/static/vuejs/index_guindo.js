@@ -65,5 +65,38 @@ var team = new Vue({
     },       
 });
         
+var jours = new Vue({
+    el: '#jours',
+    data: {
+        cate : [],
+        aujourdhui :'aujourdhui'.toLowerCase()
+    },
+    delimiters: ["${", "}"],
+    mounted(){
+        this.categorie()
+        this.datejour()
+    },
+    methods: {
+        categorie: function(){
+            axios.get('http://127.0.0.1:8000/categorieapi/')
+            .then(response => {
+                // console.log(response.data)
+                this.cate  = response.data
+                
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        },
 
+        datejour: function(){
+            var ladate=new Date()
+            var tab_jour=new Array("dimanche", "lundi", "mardi", "mercredi", "Jeudi", "vendredi", "samedi");
+            this.aujourdhui = tab_jour[ladate.getDay()]
+            console.log(this.aujourdhui)
+        }
+                        
+    },
+            
+});
 //

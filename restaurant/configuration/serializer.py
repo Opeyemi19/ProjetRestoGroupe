@@ -34,3 +34,14 @@ class AllFrontSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     class Meta:
         model = AllFront
         fields = '__all__'
+
+
+class BannerRestoSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
+
+    class Meta:
+        model = BannerResto
+        fields = '__all__'
+
+
+
+

@@ -58,15 +58,49 @@ class Heure(models.Model):
         return self.heure
 
 
+class Person(models.Model):
+    """Model definition for Heure."""
+    personne = models.PositiveIntegerField()
+    date_add = models.DateTimeField(auto_now_add=True, null=True)
+    date_update = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=True)
+
+    class Meta:
+        """Meta definition for Heure."""
+
+        verbose_name = 'Nombre de Personne'
+    
+    # def __str__(self):
+    #     """Unicode representation of Heure."""
+    #     return self.personne
+
+
+
+class TableMessage(models.Model):
+
+    jour_id = models.ForeignKey(Jour, on_delete=models.CASCADE, related_name="jour_dispo")
+    heure_id = models.ForeignKey(Heure, on_delete=models.CASCADE, related_name="heure_dispo")
+    person_id = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="reservation_possible")
+    date_add=models.DateTimeField(auto_now_add=True)
+    date_update=models.DateTimeField(auto_now=True)
+    status=models.BooleanField(default=True)
+
+
+    # def __str__(self):
+    #     """Unicode representation of Heure."""
+    #     return self.status
+
+
 class Reservation(models.Model):
     """Model definition for Reservation."""
 
     nom=models.CharField(max_length=50)
     email=models.EmailField()
     phone=models.CharField(max_length=50)
-    status=models.BooleanField(default=False)
-    jour = models.ForeignKey(Jour, on_delete=models.CASCADE, related_name="Jour_reserver")
-    heure = models.ForeignKey(Heure, on_delete=models.CASCADE, related_name="heure_reserver")
+    jour = models.CharField(max_length=50)
+    heure = models.CharField(max_length=50)
+    nbre_reservation = models.CharField(max_length=50)
+    message = models.TextField()
     date_add=models.DateTimeField(auto_now_add=True)
     date_update=models.DateTimeField(auto_now=True)
     status=models.BooleanField(default=False)
@@ -78,9 +112,9 @@ class Reservation(models.Model):
         verbose_name = 'Reservation'
         verbose_name_plural = 'Reservations'
 
-    def __str__(self):
-        """Unicode representation of Reservation."""
-        return self.nom 
+    # def __str__(self):
+    #     """Unicode representation of Reservation."""
+    #     return self.nom 
 
 
 

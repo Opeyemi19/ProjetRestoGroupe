@@ -4,6 +4,7 @@ from .viewsets import *
 
 
 router = DefaultRouter()
+router.register('bannerapi', BannerRestoViewSet, base_name='bannerapi')
 router.register('allfront', AllFrontViewSet, base_name='allfront')
 router.register('stepindex', StepIndexViewSet, base_name='stepindex')
 router.register('info', InfoViewSet, base_name='info')

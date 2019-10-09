@@ -7,6 +7,21 @@ from django.contrib import admin
 from . import models
 
 
+class BannerRestoAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'image_banner',
+        'status',
+        'date_add',
+        'date_upd',
+    )
+    list_filter = (
+        'status',
+    )
+
+
+
 class AllFrontAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -54,6 +69,8 @@ def _register(model, admin_class):
     admin.site.register(model, admin_class)
 
 
+
+_register(models.BannerResto, BannerRestoAdmin)
 _register(models.AllFront, AllFrontAdmin)
 _register(models.StepIndex, StepIndexAdmin)
 _register(models.Info, InfoAdmin)

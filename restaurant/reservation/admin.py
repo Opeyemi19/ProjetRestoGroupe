@@ -1,9 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
-# vim: set fileencoding=utf-8 :
-from django.contrib import admin
-
 from . import models
 
 
@@ -62,6 +58,26 @@ class HeureAdmin(admin.ModelAdmin):
     )
 
 
+class PersonAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'personne', 'date_add', 'date_update', 'status')
+    list_filter = (
+        'personne',
+        'date_add',
+        'date_update',
+        'status',
+    )
+
+
+class TableMessageAdmin(admin.ModelAdmin):
+    
+    list_display = ('id', 'jour_id', 'heure_id', 'person_id', 'date_add', 'date_update', 'status')
+    list_filter = (
+
+        'status',
+    )
+
+
 class ReservationAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -71,6 +87,7 @@ class ReservationAdmin(admin.ModelAdmin):
         'phone',
         'jour',
         'heure',
+        'nbre_reservation',
         'date_add',
         'date_update',
         'status',
@@ -78,14 +95,6 @@ class ReservationAdmin(admin.ModelAdmin):
     list_filter = (
         'jour',
         'heure',
-        'date_add',
-        'date_update',
-        'status',
-        'id',
-        'nom',
-        'email',
-        'phone',
-        'jour',
         'heure',
         'date_add',
         'date_update',
@@ -100,4 +109,6 @@ def _register(model, admin_class):
 _register(models.Table, TableAdmin)
 _register(models.Jour, JourAdmin)
 _register(models.Heure, HeureAdmin)
+_register(models.Person, PersonAdmin)
+_register(models.TableMessage, TableMessageAdmin)
 _register(models.Reservation, ReservationAdmin)
