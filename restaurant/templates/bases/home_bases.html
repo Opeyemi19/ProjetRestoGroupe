@@ -140,37 +140,37 @@
   
 	{% endblock content %}
 		<!-- End of menu Section -->
-		<footer  class="mastfoot pb-5 bg-white section-padding pb-0" id=footer>
+		<footer  class="mastfoot pb-5 bg-white section-padding pb-0" >
 			<div class="inner container">
 				<div class="row">
-					<div class="col-lg-4">
+					<div class="col-lg-4" id="footerinfos">
 						<div class="footer-widget pr-lg-5 pr-0">
-							<img :src="logoUrl" class="img-fluid footer-logo mb-3" alt="">
-							<p>  </p>
+							<img :src="footerinfos[0].logo" class="img-fluid footer-logo mb-3" alt="">
+							<p> ${ aboutinfooter[0].description}.  </p>
 							<nav class="nav nav-mastfoot justify-content-start">
-								<a class="nav-link" :href='info[0]'>
+								<a class="nav-link" :href='socialnetwork[2].fbLink'>
 									<i class="fab fa-facebook-f"></i>
 								</a>
-								<a class="nav-link" :href='info[0]'>
+								<a class="nav-link" :href='socialnetwork[2].twLink'>
 									<i class="fab fa-twitter"></i>
 								</a>	
-								<a class="nav-link" :href='info[0]'>
+								<a class="nav-link" :href='socialnetwork[2].instaLink'>
 									<i class="fab fa-instagram"></i>
 								</a>
 							</nav>
 						</div>
 					
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4" id="workinghours">
 						<div class="footer-widget px-lg-5 px-0">
 							<h4>Open Hours</h4>
 							<ul class="list-unstyled open-hours">
-							
-								<li class="d-flex justify-content-between"><span>${workingH[2].day}</span><span>${workingH[2].openHours} - ${workingH[2].closeHours} </span></li>
+								<li class="d-flex justify-content-between" id="working-hours" v-for="workinghour in workinghours"><span>${workinghour.day}</span><span>${workinghour.openHours} - ${workinghour.closeHours} </span></li>
+								<!-- 
 								<li class="d-flex justify-content-between"><span>${workingH[3].day}</span><span>${workingH[3].openHours} - ${workingH[3].closeHours} </span></li>
 								<li class="d-flex justify-content-between"><span>${workingH[4].day}</span><span>${workingH[4].openHours} - ${workingH[4].closeHours} </span></li>
 								<li class="d-flex justify-content-between"><span>${workingH[5].day}</span><span>${workingH[5].openHours} - ${workingH[5].closeHours}</span></li>
-								<!-- <li class="d-flex justify-content-between"><span>${workingH[6].day}</span><span>${workingH[6].openHours} - ${workingH[6].closeHours}</span></li> -->
+								<li class="d-flex justify-content-between"><span>${workingH[6].day}</span><span>${workingH[6].openHours} - ${workingH[6].closeHours}</span></li> -->
 							</ul>
 						</div>
 					

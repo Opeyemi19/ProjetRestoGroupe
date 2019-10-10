@@ -14,10 +14,16 @@ Vue.component('about_index', {
     delimiters : ["${","}"],
 });
 
-                                                                                                            // Vue.component('working_hours', {
-                                                                                                            //     template: "#working-hours",
-                                                                                                            //     delimiters : ["${","}"],
-                                                                                                            // });
+                                                                                                            Vue.component('working_hours', {
+                                                                                                                template: "#working-hours",
+                                                                                                                delimiters : ["${","}"],
+                                                                                                            });
+Vue.component('banner_field', {
+template: "#banner-field",
+delimiters : ["${","}"],
+});
+
+
 {/* create app about for get and display about infos */}
 var app = new Vue({
     el: '#about',
@@ -141,7 +147,7 @@ var app = new Vue({
 
 {/* create app for get special dish      */}
 var app = new Vue({
-    el: '#index',
+    el: '#sessionabout',
     
     data: {
         specialdis: [
@@ -153,16 +159,15 @@ var app = new Vue({
         about : [
 
         ],
-        allfront : [
-
-        ]
+        
+        
     },
     delimiters: ["${", "}"],
     mounted(){
         this.getspecialdish()
-        this.getmenusi()
+        this.getmenuis()
         this.getaboutinfos()
-        this.getallfront()
+       
     },
     methods: {
                 
@@ -181,7 +186,7 @@ var app = new Vue({
                 })
         },
 
-        getmenusi: function(){
+        getmenuis: function(){
             axios.get('http://127.0.0.1:8000/menuapi/')
                 .then(response => {
                     console.log(response.data)
@@ -202,16 +207,34 @@ var app = new Vue({
                     console.log(err);
                 })
         },
-        getallfront: function(){
-            axios.get('http://127.0.0.1:8000/config/allfront/')
-                .then(response => {
-                    console.log(response.data)
-                    this.allfront=response.data;
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-        },
+        // getallteami: function(){
+        //     axios.get('http://127.0.0.1:8000/personnel/teamapi/')
+        //     .then(response => {
+        //         console.log(response.data)
+        //         this.teamis   = response.data
+                
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     })
+
+           
+        // },
+
+        // getpostei: function(){
+        //     axios.get('http://127.0.0.1:8000/personnel/posteapi/')
+        //     .then(response => {
+        //         console.log(response.data)
+        //         this.posteis  = response.data
+                
+                
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     })
+        
+        // },
+        
         
                    
     },
@@ -221,12 +244,10 @@ var app = new Vue({
 
                                                                                 {/* create app for get special dish      */}
                                                                                 var app = new Vue({
-                                                                                    el: '#footerinfos',
+                                                                                    el: '#workinghours',
                                                                                     
                                                                                     data: {
-                                                                                        footerinfos: [
-
-                                                                                        ],
+                                                                                        
                                                                                         workinghours :[
 
                                                                                         ],
@@ -234,7 +255,6 @@ var app = new Vue({
                                                                                     },
                                                                                     delimiters: ["${", "}"],
                                                                                     mounted(){
-                                                                                        this.getfooterinfos()
                                                                                         this.getworkinghours()
                                                                                     },
                                                                                     methods: {
@@ -243,16 +263,7 @@ var app = new Vue({
                                                                                         //     console.log('Hello')
                                                                                         // },
 
-                                                                                        getfooterinfos: function(){
-                                                                                            axios.get('http://127.0.0.1:8000/config/about/')
-                                                                                                .then(response => {
-                                                                                                    console.log(response.data)
-                                                                                                    this.footerinfos=response.data;
-                                                                                                })
-                                                                                                .catch((err) => {
-                                                                                                    console.log(err);
-                                                                                                })
-                                                                                        },
+                                                                                       
                                                                                         getworkinghours: function(){
                                                                                             axios.get('http://127.0.0.1:8000/config/works/')
                                                                                                 .then(response => {
@@ -298,4 +309,301 @@ var app = new Vue({
                    
     },
         
-});                                                                              
+});              
+
+                                                                                {/* create app for get special dish      */}
+                                                                                var app = new Vue({
+                                                                                    el: '#header',
+                                                                                    
+                                                                                    data: {
+                                                                                        
+                                                                                        allfront : [
+
+                                                                                        ],
+
+                                                                                    },
+                                                                                    delimiters: ["${", "}"],
+                                                                                    mounted(){
+                                                                                        
+                                                                                        this.getallfront()
+                                                                                    },
+                                                                                    methods: {
+                                                                                                
+                                                                                        // hello: function () {
+                                                                                        //     console.log('Hello')
+                                                                                        // },
+
+                                                                                       
+                                                                                        getallfront: function(){
+                                                                                            axios.get('http://127.0.0.1:8000/config/allfront/')
+                                                                                                .then(response => {
+                                                                                                    console.log(response.data)
+                                                                                                    this.allfront=response.data;
+                                                                                                })
+                                                                                                .catch((err) => {
+                                                                                                    console.log(err);
+                                                                                                })
+                                                                                        },
+                                                                                        
+                                                                                        
+                                                                                    },
+                                                                                        
+                                                                                });
+
+{/* create app for get special dish      */}
+var app = new Vue({
+    el: '#bann',
+    
+    data: {
+        
+        banners : [
+
+        ],
+
+    },
+    delimiters: ["${", "}"],
+    mounted(){
+        
+        this.getbanner()
+    },
+    methods: {
+                
+        // hello: function () {
+        //     console.log('Hello')
+        // },
+
+       
+        getbanner: function(){
+            axios.get('http://127.0.0.1:8000/config/bannerapi/')
+                .then(response => {
+                    console.log(response.data)
+                    this.banners=response.data;
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        },
+        
+        
+    },
+        
+});
+
+                                                                                                var app = new Vue({
+                                                                                                    el: '#sessionmenu',
+                                                                                                    data: {
+                                                                                                        categos : [],
+                                                                                                    },
+                                                                                                    delimiters: ["${", "}"],
+                                                                                                    mounted(){
+                                                                                                        this.getcategos()
+                                                                                                    },
+                                                                                                    methods: {
+                                                                                                        getcategos: function(){
+                                                                                                            axios.get('http://127.0.0.1:8000/categorieapi/')
+                                                                                                            .then(response => {
+                                                                                                                // console.log(response.data)
+                                                                                                                this.categos  = response.data
+                                                                                                                
+                                                                                                            })
+                                                                                                            .catch((err) => {
+                                                                                                                console.log(err);
+                                                                                                            })
+                                                                                                        }
+                                                                                                                        
+                                                                                                    },
+                                                                                                            
+                                                                                                });
+var app = new Vue({
+    el: '#today',
+    data: {
+        categos : [],
+        today :'today'.toLowerCase()
+    },
+    delimiters: ["${", "}"],
+    mounted(){
+        this.getcategos()
+        this.gettoday()
+    },
+    methods: {
+        getcategos: function(){
+            axios.get('http://127.0.0.1:8000/categorieapi/')
+            .then(response => {
+                // console.log(response.data)
+                this.categos  = response.data
+                
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        },
+
+        gettoday: function(){
+            var ladate=new Date()
+            var tab_jour=new Array("dimanche", "lundi", "mardi", "mercredi", "Jeudi", "vendredi", "samedi");
+            this.today = tab_jour[ladate.getDay()]
+            console.log(this.today)
+        }
+                        
+    },
+            
+});
+
+                                                                                    {/* create app for get special dish      */}
+                                                                                    var app = new Vue({
+                                                                                        el: '#sessionspd',
+                                                                                        
+                                                                                        data: {
+                                                                                            spdishs: [
+
+                                                                                            ],
+                                                                                            repas : [
+
+                                                                                            ],
+                                                                                            
+                                                                                        },
+                                                                                        delimiters: ["${", "}"],
+                                                                                        mounted(){
+                                                                                            this.getrepas()
+                                                                                            this.getspdish()
+                                                                                        },
+                                                                                        methods: {
+                                                                                                    
+                                                                                            // hello: function () {
+                                                                                            //     console.log('Hello')
+                                                                                            // },
+
+                                                                                            getspdish: function(){
+                                                                                                axios.get('http://127.0.0.1:8000/specialapi/')
+                                                                                                    .then(response => {
+                                                                                                        console.log(response.data)
+                                                                                                        this.spdishs=response.data;
+
+
+                                                                                                    })
+                                                                                                    .catch((err) => {
+                                                                                                        console.log(err);
+                                                                                                    })
+                                                                                            },
+
+                                                                                            getrepas: function(){
+                                                                                                axios.get('http://127.0.0.1:8000/menuapi/')
+                                                                                                    .then(response => {
+                                                                                                        console.log(response.data)
+                                                                                                        this.repas=response.data;
+
+                                                                                                    })
+                                                                                                    .catch((err) => {
+                                                                                                        console.log(err);
+                                                                                                    })
+                                                                                            }
+                                                                                                            
+                                                                                        },
+                                                                                            
+                                                                                    });
+
+var app = new Vue({
+    el: '#sessionteam',
+    data: {
+        members:[],
+        occupations:[],
+    },
+    delimiters: ["${", "}"],
+    mounted(){
+        this.getmembers()
+        this.getoccupations()
+    },
+    methods: {
+        getmembers: function(){
+            axios.get('http://127.0.0.1:8000/personnel/teamapi/')
+            .then(response => {
+                this.members   = response.data
+                // console.log(response.data)
+                
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
+            
+        },
+
+        getoccupations: function(){
+            axios.get('http://127.0.0.1:8000/personnel/posteapi/')
+            .then(response => {
+                this.occupations  = response.data
+                console.log(response.data)
+                
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        
+        },
+    },       
+});
+
+                                                                                    {/* create app for get special dish      */}
+                                                                                    var app = new Vue({
+                                                                                        el: '#footerinfos',
+                                                                                        
+                                                                                        data: {
+                                                                                            
+                                                                                            footerinfos :[
+
+                                                                                            ],
+                                                                                            aboutinfooter :[
+
+                                                                                            ],
+                                                                                            socialnetwork :[
+
+                                                                                            ],
+                                                                                            
+                                                                                        
+                                                                                        },
+                                                                                        delimiters: ["${", "}"],
+                                                                                        mounted(){
+                                                                                            this.getfooterinfos()
+                                                                                            this.getsocialnetwork()
+                                                                                            this.getaboutinfooter()
+                                                                                        },
+                                                                                        methods: {
+                                                                                                    
+                                                                                            // hello: function () {
+                                                                                            //     console.log('Hello')
+                                                                                            // },
+
+                                                                                        
+                                                                                            getfooterinfos: function(){
+                                                                                                axios.get('http://127.0.0.1:8000/config/allfront/')
+                                                                                                    .then(response => {
+                                                                                                        console.log(response.data)
+                                                                                                        this.footerinfos=response.data;
+                                                                                                    })
+                                                                                                    .catch((err) => {
+                                                                                                        console.log(err);
+                                                                                                    })
+                                                                                            },    
+                                                                                            getsocialnetwork: function(){
+                                                                                                axios.get('http://127.0.0.1:8000/config/info/')
+                                                                                                    .then(response => {
+                                                                                                        console.log(response.data)
+                                                                                                        this.socialnetwork=response.data;
+                                                                                                    })
+                                                                                                    .catch((err) => {
+                                                                                                        console.log(err);
+                                                                                                    })
+                                                                                            },    
+                                                                                            getaboutinfooter: function(){
+                                                                                                axios.get('http://127.0.0.1:8000/config/about/')
+                                                                                                    .then(response => {
+                                                                                                        console.log(response.data)
+                                                                                                        this.aboutinfooter=response.data;
+                                                                                                    })
+                                                                                                    .catch((err) => {
+                                                                                                        console.log(err);
+                                                                                                    })
+                                                                                            },                  
+                                                                                        },
+                                                                                            
+                                                                                    });
