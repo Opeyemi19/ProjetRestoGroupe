@@ -1,9 +1,9 @@
 {% extends "bases/home_bases.html" %}
 {% block content %}
 <div id="index">
-        <div class="hero">
-                <div class="container"  >
-                <div class="row d-flex align-items-center">
+        <div class="hero" >
+            <div class="container"  >
+                <div class="row d-flex align-items-center" >
                     <div class="col-lg-6 hero-left">
                         <h1 class="display-4 mb-5"> ${ allfront[0].headerText}</h1>
                         <div class="mb-2">
@@ -33,10 +33,9 @@
                                 </h5>
                             </li>
                             <div>
-        
-                                    <div class="btn btn-primary" v-on:click="hello">
-                                                        Bouton
-                                    </div>
+                                <div class="btn btn-primary" v-on:click="hello">
+                                    Bouton
+                                </div>
                             </div>
                           
                         </ul>
@@ -56,34 +55,131 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>		<!-- Welcome Section -->
+        <section id="gtco-welcome" class="bg-white section-padding">
+            <div class="container">
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-sm-5 img-bg d-flex shadow align-items-center justify-content-center justify-content-md-end img-2" v-bind:style="{ backgroundImage: 'url(' + about[0].image + ')' }">
+                        </div>
+                        <div class="col-sm-7 py-5 pl-md-0 pl-4">
+                            <div class="heading-section pl-lg-5 ml-md-5">   
+                                <span class="subheading">
+                                    About
+                                </span>
+                                <h2>
+                                    ${ about[0].headerText}.
+                                </h2>
+                            </div>
+                            <div class="pl-lg-5 ml-md-5">
+                                <p> ${ about[0].description} </p>
+                                <h3 class="mt-5">Special Recipe</h3>
+                                <div class="row">
+                                    <div class="col-4" id="about-index" v-for="specialdi in specialdis" >
+                                        <a href="#" class="thumb-menu">
+                                            <img class="img-fluid img-cover" :src="specialdi.image"/>
+                                            <h6 >${ specialdi.description }</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>		<!-- Welcome Section -->
-            <section id="gtco-welcome" class="bg-white section-padding">
+            </div>
+        </section>
+        <!-- End of Welcome Section -->		
+        
+        <!-- Special Dishes Section -->
+        <section id="gtco-special-dishes" class="bg-grey section-padding">
+            <div class="container">
+                <div class="section-content" id="specialdish">
+                    <div class="heading-section text-center">
+                        <span class="subheading">
+                            Specialties
+                        </span>
+                        <h2>
+                            Special Dishes
+                        </h2>
+                    </div>
+                    <div class="row mt-5" id="special-dish" v-for="specialdishinfoi in specialdishinfois" >
+                        <div v-if="specialdishinfo.id%2==1" class="row mt-5">
+                            <div class="col-lg-5 col-md-6 align-self-center py-5">
+                                <h2 class="special-number"> ${ specialdishinfoi.id }. </h2>
+                                <div class="dishes-text">
+                                    <div v-for="menu in menus">
+                                        <div v-if="specialdishinfo.id_menu==menu.id">
+                                            <h3><span>Beef</span><br> ${ menu.nom }</h3>
+                                            <p class="pt-3">${ specialdishinfoi.description }</p>
+                                            <h3 class="special-dishes-price">${ menu.prix }</h3>
+                                            <a href="#" class="btn-primary mt-3">book a table</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
+                                <img :src="specialdishinfo.image" alt="" class="img-fluid shadow w-100">
+                            </div>
+                        </div>
+                        <div v-else class="row mt-5">
+                            <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
+                                <img :src="specialdishinfo.image" alt="" class="img-fluid shadow w-100">
+                            </div>
+                            <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
+                                <h2 class="special-number"> ${ specialdishinfoi.id }. </h2>
+                                <div class="dishes-text">
+                                    <div v-for="menu in menus">
+                                        <div v-if="specialdishinfo.id_menu==menu.id">
+                                            <h3><span>Beef</span><br> ${ menu.nom }</h3>
+                                            <p class="pt-3">${ specialdishinfoi.description }</p>
+                                            <h3 class="special-dishes-price">${ menu.prix }</h3>
+                                            <a href="#" class="btn-primary mt-3">book a table</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- End of Special Dishes Section -->		<!-- Menu Section -->
+        <div id='menu'>
+            <section id="gtco-menu" class="section-padding">
                 <div class="container">
                     <div class="section-content">
-                        <div class="row">
-                            <div class="col-sm-5 img-bg d-flex shadow align-items-center justify-content-center justify-content-md-end img-2" v-bind:style="{ backgroundImage: 'url(' + about[0].image + ')' }">
-                              
-                            </div>
-                            <div class="col-sm-7 py-5 pl-md-0 pl-4">
-                                <div class="heading-section pl-lg-5 ml-md-5">   
+                        <div class="row mb-5">
+                            <div class="col-md-12">
+                                <div class="heading-section text-center">
                                     <span class="subheading">
-                                        About
+                                        Specialties
                                     </span>
                                     <h2>
-                                            ${ about[0].headerText}.
+                                        Our Menu
                                     </h2>
-                                </div>
-                                <div class="pl-lg-5 ml-md-5">
-                                    <p> ${ about[0].description} </p>
-                                    <h3 class="mt-5">Special Recipe</h3>
-                                    <div class="row">
-                                        <div class="col-4" id="about-index" v-for="specialdi in specialdis" >
-                                            <a href="#" class="thumb-menu">
-                                                <img class="img-fluid img-cover" :src="specialdi.image"/>
-                                                <h6 >${ specialdi.description }</h6>
-                                            </a>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="row" v-for="comp in cate">
+                            <div class="col-lg-12 heading-menu">
+                                <h3 class="text-center mb-5">${comp.nom}</h3>
+                            </div>
+                            <div class="col-lg-4 menu-wrap" v-for='menu in comp.Catégorie_menu'>
+                                <div class="menus d-flex align-items-center">
+                                    <div class="menu-img rounded-circle" style="margin-top: -45;margin-top: 0px;margin-bottom: 90px;">
+                                        <img class="img-fluid" v-bind:src="menu.image" alt="">
+                                    </div>
+                                    <div class="text-wrap"  style='height: 150px !important;'>
+                                        <div class="row align-items-start" >
+                                            <div class="col-8">
+                                                <h4>${menu.nom}</h4>
+                                            </div>
+                                            <div class="col-4">
+                                                <h4 class="text-muted menu-price">${menu.prix} Fcfa</h4>
+                                            </div>
                                         </div>
+                                        <p>${menu.description}</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,138 +187,44 @@
                     </div>
                 </div>
             </section>
-            <!-- End of Welcome Section -->		<!-- Special Dishes Section -->
-            <section id="gtco-special-dishes" class="bg-grey section-padding">
-                <div class="container">
-                    <div class="section-content" id="specialdish">
-                        <div class="heading-section text-center">
-                            <span class="subheading">
-                                Specialties
-                            </span>
-                            <h2>
-                                Special Dishes
-                            </h2>
-                        </div>
-                        <div class="row mt-5" id="special-dish" v-for="specialdishinfoi in specialdishinfois" >
-                            <div v-if="specialdishinfo.id%2==1" class="row mt-5">
-                                <div class="col-lg-5 col-md-6 align-self-center py-5">
-                                    <h2 class="special-number"> ${ specialdishinfoi.id }. </h2>
-                                    <div class="dishes-text">
-                                        <div v-for="menu in menus">
-                                            <div v-if="specialdishinfo.id_menu==menu.id">
-                                                <h3><span>Beef</span><br> ${ menu.nom }</h3>
-                                                <p class="pt-3">${ specialdishinfoi.description }</p>
-                                                <h3 class="special-dishes-price">${ menu.prix }</h3>
-                                                <a href="#" class="btn-primary mt-3">book a table</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                                    <img :src="specialdishinfo.image" alt="" class="img-fluid shadow w-100">
-                                </div>
+            <!-- End of menu Section -->
+        </div>
+            		<!-- Testimonial Section--><!--v-bind:style="{background-image: 'url(' + imageTesti + ')'}"-->
+        <section id="gtco-testimonial" class="overlay bg-fixed section-padding" v-bind:style="{ backgroundImage: 'url(' + imageResrvation + ')' }">
+            <div class="container">
+                <div class="section-content">
+                    <div class="heading-section text-center">
+                        <span class="subheading">
+                            Testimony
+                        </span>
+                        <h2>
+                            Happy Customer 
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <!-- Testimonial -->
+                        <div class="testi-content testi-carousel owl-carousel">
+                            <div class="testi-item">
+                                <i class="testi-icon fa fa-3x fa-quote-left"></i>
+                                <p class="testi-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p class="testi-author">John Doe</p>
+                                <p class="testi-desc">CEO of <span>GetTemplates</span></p>
                             </div>
-                            <div v-else class="row mt-5">
-                                <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
-                                    <img :src="specialdishinfo.image" alt="" class="img-fluid shadow w-100">
-                                </div>
-                                <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
-                                    <h2 class="special-number"> ${ specialdishinfoi.id }. </h2>
-                                    <div class="dishes-text">
-                                        <div v-for="menu in menus">
-                                            <div v-if="specialdishinfo.id_menu==menu.id">
-                                                <h3><span>Beef</span><br> ${ menu.nom }</h3>
-                                                <p class="pt-3">${ specialdishinfoi.description }</p>
-                                                <h3 class="special-dishes-price">${ menu.prix }</h3>
-                                                <a href="#" class="btn-primary mt-3">book a table</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="testi-item">
+                                <i class="testi-icon fa fa-3x fa-quote-left"></i>
+                                <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci non doloribus ut, alias doloremque perspiciatis.</p>
+                                <p class="testi-author">Mary Jane</p>
+                                <p class="testi-desc">CTO of <span>Unidentity Inc</span></p>
                             </div>
                         </div>
+                        <!-- End of Testimonial -->
                     </div>
                 </div>
-            </section>
-            <!-- End of Special Dishes Section -->		<!-- Menu Section -->
-            <div id='menu'>
-                <section id="gtco-menu" class="section-padding">
-                    <div class="container">
-                        <div class="section-content">
-                            <div class="row mb-5">
-                                <div class="col-md-12">
-                                    <div class="heading-section text-center">
-                                        <span class="subheading">
-                                            Specialties
-                                        </span>
-                                        <h2>
-                                            Our Menu
-                                        </h2>
-                                    </div>  
-                                </div>
-                            </div>
-                            <div class="row" v-for="comp in cate">
-                                    <div class="col-lg-12 heading-menu">
-                                            <h3 class="text-center mb-5">${comp.nom}</h3>
-                                    </div>
-                                    <div class="col-lg-4 menu-wrap" v-for='menu in comp.Catégorie_menu'>
-                                            <div class="menus d-flex align-items-center">
-                                                <div class="menu-img rounded-circle" style="margin-top: -45;margin-top: 0px;margin-bottom: 90px;">
-                                                    <img class="img-fluid" v-bind:src="menu.image" alt="">
-                                                </div>
-                                                <div class="text-wrap"  style='height: 150px !important;'>
-                                                    <div class="row align-items-start" >
-                                                        <div class="col-8">
-                                                            <h4>${menu.nom}</h4>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h4 class="text-muted menu-price">${menu.prix} Fcfa</h4>
-                                                        </div>
-                                                    </div>
-                                                    <p>${menu.description}</p>
-                                                </div>
-                                            </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                </div>
-            <!-- End of menu Section -->		<!-- Testimonial Section--><!--v-bind:style="{background-image: 'url(' + imageTesti + ')'}"-->
-            <section id="gtco-testimonial" class="overlay bg-fixed section-padding" v-bind:style="{ backgroundImage: 'url(' + imageResrvation + ')' }">
-                <div class="container">
-                    <div class="section-content">
-                        <div class="heading-section text-center">
-                            <span class="subheading">
-                                Testimony
-                            </span>
-                            <h2>
-                                Happy Customer 
-                            </h2>
-                        </div>
-                        <div class="row">
-                            <!-- Testimonial -->
-                            <div class="testi-content testi-carousel owl-carousel">
-                                <div class="testi-item">
-                                    <i class="testi-icon fa fa-3x fa-quote-left"></i>
-                                    <p class="testi-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <p class="testi-author">John Doe</p>
-                                    <p class="testi-desc">CEO of <span>GetTemplates</span></p>
-                                </div>
-                                <div class="testi-item">
-                                    <i class="testi-icon fa fa-3x fa-quote-left"></i>
-                                    <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci non doloribus ut, alias doloremque perspiciatis.</p>
-                                    <p class="testi-author">Mary Jane</p>
-                                    <p class="testi-desc">CTO of <span>Unidentity Inc</span></p>
-                                </div>
-                            </div>
-                            <!-- End of Testimonial -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-          
-            <!-- End of Testimonial Section-->		<!-- Team Section -->
+            </div>
+        </section>
+        <!-- End of Testimonial Section-->		
+        
+        <!-- Team Section -->
             <section id="gtco-team" class="bg-white section-padding">
                 <div class="container">
                     <div class="section-content">
@@ -404,5 +406,6 @@
                   
                 </div>
             </section>
-</div>
+        </div>
+    </div>
 {% endblock content %}

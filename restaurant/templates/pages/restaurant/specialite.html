@@ -12,7 +12,7 @@
                 </h2>
             </div>
             <div class="row mt-5" id="special-dish" v-for="(specialdishinfo, index) in specialdishinfos" >
-                <div v-if="specialdishinfo.id%2==1" class="row mt-5">
+                <div v-if="index%2!=1" class="row mt-5">
                     <div class="col-lg-5 col-md-6 align-self-center py-5">
                         <h2 class="special-number"> ${ index+1 }. </h2>
                         <div class="dishes-text">

@@ -14,6 +14,10 @@ Vue.component('about_index', {
     delimiters : ["${","}"],
 });
 
+                                                                                                            // Vue.component('working_hours', {
+                                                                                                            //     template: "#working-hours",
+                                                                                                            //     delimiters : ["${","}"],
+                                                                                                            // });
 {/* create app about for get and display about infos */}
 var app = new Vue({
     el: '#about',
@@ -217,18 +221,21 @@ var app = new Vue({
 
                                                                                 {/* create app for get special dish      */}
                                                                                 var app = new Vue({
-                                                                                    el: '#footer',
+                                                                                    el: '#footerinfos',
                                                                                     
                                                                                     data: {
                                                                                         footerinfos: [
+
+                                                                                        ],
+                                                                                        workinghours :[
 
                                                                                         ],
                                                                                        
                                                                                     },
                                                                                     delimiters: ["${", "}"],
                                                                                     mounted(){
-                                                                                        this.getinfos()
-                                                                                        this.getmenus()
+                                                                                        this.getfooterinfos()
+                                                                                        this.getworkinghours()
                                                                                     },
                                                                                     methods: {
                                                                                                 
@@ -246,7 +253,16 @@ var app = new Vue({
                                                                                                     console.log(err);
                                                                                                 })
                                                                                         },
-                                                                                                        
+                                                                                        getworkinghours: function(){
+                                                                                            axios.get('http://127.0.0.1:8000/config/works/')
+                                                                                                .then(response => {
+                                                                                                    console.log(response.data)
+                                                                                                    this.workinghours=response.data;
+                                                                                                })
+                                                                                                .catch((err) => {
+                                                                                                    console.log(err);
+                                                                                                })
+                                                                                        },                  
                                                                                     },
                                                                                         
                                                                                 });
