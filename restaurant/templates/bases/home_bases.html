@@ -28,12 +28,45 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/static/css/style.min.css">
+    <link rel="stylesheet" href="/static/css/style2.css">
+	<!-- <link rel="stylesheet" href="/static/css/pace-theme-center-radar.css"> -->
+	<!-- <link rel="stylesheet" href="/static/progresscircle.css"> -->
 
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<!-- <script src="/static/js/pace.min.js"></script> -->
+
+
+	<!-- loader -->
+		 
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="jquery.easy-overlay.js"></script> -->
+
+	<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
+	<!-- Lodaer -->
+	
+	<!-- Loader Perso -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+	<script type="text/javascript">
+    
+		$(window).on('load', function () {
+			$('.preloader').addClass('complete')
+		})
+    
+	</script>
+
+
+	<!-- Fin de Loader Perso  -->
+
 
 </head>
 <body data-spy="scroll" data-target="#navbar"> 
+
+
+<div id="principal">
 	<div id="side-nav" class="sidenav">
 		<a href="javascript:void(0)" id="side-nav-close">&times;</a>
 	
@@ -63,6 +96,38 @@
 
 			</form>
 		</div>
+	
+ 	
+	</div>	<div id="canvas-overlay"></div>
+		
+		<div class="boxed-page">
+			<nav id="navbar-header" class="navbar navbar-expand-lg">
+		<div class="container">
+			<a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
+				<img :src="logo[0].image" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="lnr lnr-menu"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+				<ul class="navbar-nav d-flex justify-content-between">
+					<li class="nav-item only-desktop">
+						<a class="nav-link" id="side-nav-open" href="#">
+							<span class="lnr lnr-menu"></span>
+						</a>
+					</li>
+					<div class="d-flex flex-lg-row flex-column">
+						<li class="nav-item active">
+							<a class="nav-link" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href={% url 'about' %}>About</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Special Dishes
 	</div>	
 	<div id="canvas-overlay"></div>
 	<div class="boxed-page">
@@ -135,6 +200,13 @@
 					</ul>
 				</div>
 			</div>
+		</div>
+	</nav>		<!-- Menu Section -->
+
+	<div class="preloader">
+		<div class="loader"></div>
+	</div>
+
 		</nav>		<!-- Menu Section -->
 	{% block content %}
   
@@ -202,6 +274,13 @@
 		</footer>
 	</div>	
 	<!-- External JS -->
+
+
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="/static/progresscircle.js"></script> -->
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 	<script src="/static/vendor/bootstrap/popper.min.js"></script>
@@ -235,6 +314,18 @@
 	<script src="/static/vuejs/index_guindo.js"></script>
 
 			<!-- Index_patric.js -->
+	<script src="/static/vuejs/index_patric.js"></script>
+
+	<!-- <script>
+	
+	$(function(){
+
+		$('.circlechart').circlechart();
+
+	});
+	
+	</script> -->
+
 	<!-- <script src="/static/vuejs/index_patric.js"></script> -->
 </body>
 </html>
